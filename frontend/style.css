@@ -1,0 +1,153 @@
+/* CSS reset start */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+    background: transparent;
+    font-family: inherit;
+  }
+a{
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+
+button,
+a {
+    cursor: pointer;
+    color: inherit;
+}
+
+textarea {
+    resize: none;
+}
+
+button,
+textarea,
+select {
+    appearance: none !important;
+    border-radius: 0;
+}
+
+ol, ul, li {
+    list-style:none;display:block;
+}
+
+/* CSS reset end */
+
+#root {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(236, 246, 255);
+    height: 100vh;
+    width: 100%;
+}
+
+#root .galleryBtn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    left: 20%;
+    transform: translateX(-50%);
+    height: 100px;
+    width: 100px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#root .galleryBtn:hover {
+    background-color: rgb(142, 156, 168);
+}
+
+#root form {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    width: 300px;
+}
+
+#root form input {
+    border: 1px solid #000;
+    background: unset;
+}
+
+#root h1 {
+    text-decoration: underline;
+}
+
+#root div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 1100px;
+}
+
+#root div .noShow{
+    display: none;
+}
+
+#root img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#root iframe {
+    height: 600px;
+    width: 1100px;
+}
+
+#root .explanation {
+    width: 1000px;
+    text-align: center;
+}
+
+#root .date {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+#root .leftButton {
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    border-right: 3px solid black;
+    font-size: 30px;
+}
+
+#root .leftButton:hover {
+    background-color: rgb(142, 156, 168);
+}
+
+#root .rightButton {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 200px;
+    border-left: 3px solid black;
+    font-size: 30px;
+}
+
+#root .rightButton:hover {
+    background-color: rgb(142, 156, 168);
+}
+
