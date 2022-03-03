@@ -38,7 +38,9 @@ function generateHTML(header, img, date, explanation, media_type) {
 // Fetch data function
 async function fetchFirst() {
     let url = `https://api.nasa.gov/planetary/apod?api_key=MQDFPbyygp3ONA3J2zcHkIqLbdYEJcU0ss2MDhqH&start_date=${apiParams.start_date}&end_date=${apiParams.end_date}`;
+    const spinner = document.querySelector(".lds-spinner");
 
+    showSpinner(spinner);
     await fetch (url)
         .then(function (response) {
             return response.json();
@@ -52,13 +54,7 @@ async function fetchFirst() {
         .catch(function (error) {
             console.log(error);
         })
-
-    
-    
-    /* console.log(galleryElement);
-    galleryElement.insertAdjacentHTML("beforeend", galleryTag); */
-
-    
+    hideSpinner(spinner);
 }
 
 // Fetch single day for calendar
@@ -89,9 +85,20 @@ const fetchSingleDay = function (h1, image, iframe, date, explanation, input) {
         })
 }
 
+// Spinner functions
+const showSpinner = function (spinner) {
+    spinner.classList.add("showSpinner");
+}
+
+const hideSpinner = function (spinner) {
+    spinner.classList.remove("showSpinner");
+}
+
 async function loadEvent() {
     let rootElement = document.getElementById("root");
-    /* let galleryElement = document.getElementById("gallery"); */
+    rootElement.insertAdjacentHTML("beforeend", `<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`)
+
+
 
     // Fill up the landingPageLayout variable with data
     await fetchFirst();
