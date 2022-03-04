@@ -7,6 +7,7 @@ const apiParams = {
     start_date: "2022-02-01",
     end_date: today.getFullYear().toString() + "-" + (today.getMonth()+1).toString().padStart(2, "0") + "-" + today.getDate().toString().padStart(2, "0")
 }
+const apiKey = "MQDFPbyygp3ONA3J2zcHkIqLbdYEJcU0ss2MDhqH";
 
 // Generate HTML function
 function generateHTML(header, img, date, explanation, media_type) {
@@ -37,7 +38,7 @@ function generateHTML(header, img, date, explanation, media_type) {
 
 // Fetch data function
 async function fetchFirst() {
-    let url = `https://api.nasa.gov/planetary/apod?api_key=MQDFPbyygp3ONA3J2zcHkIqLbdYEJcU0ss2MDhqH&start_date=${apiParams.start_date}&end_date=${apiParams.end_date}`;
+    let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&start_date=${apiParams.start_date}&end_date=${apiParams.end_date}`;
     const spinner = document.querySelector(".lds-spinner");
 
     showSpinner(spinner);
@@ -60,7 +61,7 @@ async function fetchFirst() {
 // Fetch single day for calendar
 const fetchSingleDay = function (h1, image, iframe, date, explanation, input) {
     let requestedDate = input.target.value;
-    let url = `https://api.nasa.gov/planetary/apod?api_key=MQDFPbyygp3ONA3J2zcHkIqLbdYEJcU0ss2MDhqH&date=${requestedDate}`;
+    let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${requestedDate}`;
 
     fetch (url)
         .then(function (response) {
